@@ -6,7 +6,7 @@ I have created this application in the timeline of 10-12 days, working on my own
 
 #### How to Make The App Work ####
 
-Nothing really, make sure you have a servlet/jsp container aka a server like TomCat, import files and run the application, dependencies are shipped already. please note that you will get an error while trying to run the app because there is no access to the local network where T24 Environment exists, however, the source-code will give you an idea of the whole process, and the User/Pass is : Abdel/123
+Nothing really, make sure you have a servlet/jsp container aka a server like TomCat, import files and run the application, dependencies are shipped already. please note that you will get errors (check connection error) when trying to perform actions in app because there is no access to the local network where T24 Environment exists, however, the source-code will give you an idea of the whole process, and the User/Pass is : Abdel/123
 <br/><h4>🔴 a small document has been attached to show a demo of the app named Demo.PDF 🔴</h4>
 
 #### GOAL ####
