@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+
+
+	<security:http auto-config="true">
+		<security:intercept-url pattern="/login" access="permitAll" />
+		<security:intercept-url pattern="/error500" access="permitAll" />
+		<security:intercept-url pattern="/" access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/checkInfoMain" access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/create/" access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/account/" access="hasRole('ROLE_USER')" />
+		<security:intercept-url pattern="/resources/**" access="permitAll" />
+		<security:intercept-url pattern="/**" access="denyAll" />
+		
+		
+		<security:form-login login-page="/login"
+			default-target-url="/"
+			username-parameter="username" 
+			password-parameter="password"
+			authentication-failure-url="/login?error=failed"
+			login-processing-url="/j_spring_security_check" />
+	  <security:logout logout-url="/logout" logout-success-url="/"/> 
+	<security:csrf/>
+
+	</security:http>
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="abdel" password="123" authorities="ROLE_USER" />
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+</beans>
